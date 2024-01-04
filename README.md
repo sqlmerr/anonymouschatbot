@@ -1,15 +1,13 @@
-# Telegram bot template
+# Anonymous chat bot
 
 aiogram 3.3.0
 
-aiogram-dialog 2.1.0
-
-MongoDB
+MongoDB beanie
 
 ## Install
 ```bash
-git clone https://github.com/sqlmerr/aiogram-bot-template
-cd aiogram-bot-template
+git clone https://github.com/sqlmerr/anonymouschatbot.git
+cd anonymouschatbot
 pip install -r requirements.txt
 ```
 
