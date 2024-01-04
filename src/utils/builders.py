@@ -29,7 +29,7 @@ def url_builder(*buttons: List[str], per_row: int = 1) -> InlineKeyboardMarkup:
     return b.as_markup()
 
 
-def inline_builder(*buttons: List[str], per_row: List[int]) -> InlineKeyboardMarkup:
+def inline_builder(*buttons: List[str], per_row: List[int] = None) -> InlineKeyboardMarkup:
     """easy generation of inline buttons with callback data
 
     :argument:
