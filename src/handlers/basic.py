@@ -1,3 +1,5 @@
+import math
+
 from loguru import logger
 
 from aiogram import Router, F
@@ -38,6 +40,10 @@ async def start_cmd(message: Message, command: CommandObject, user: User):
         return
 
     room = await Room.find_one(Room.invitation == command.args, fetch_links=True)
+    if len(room.users) + 1 > room.limit:
+        await message.answer(f"<b>This room is full. {len(room.users)}/{room.limit}</b>")
+        return
+
     room.users.append(user)
 
     user.current_room = room.id

@@ -1,5 +1,5 @@
 from aiogram import Router
-from . import basic, create, leave, sender
+from . import basic, create, leave, sender, manage
 
 
 def register_routers() -> Router:
@@ -9,6 +9,7 @@ def register_routers() -> Router:
         basic.router,
         create.router,
         leave.router,
+        manage.router,
         sender.router,
     )
 
