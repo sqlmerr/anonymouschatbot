@@ -17,8 +17,6 @@ router = Router()
 @router.callback_query(F.data == "new_room")
 @router.message(Command("create"))
 async def create_room(event: Union[Message, CallbackQuery], state: FSMContext, user: User):
-    return
-
     if isinstance(event, CallbackQuery):
         await event.answer()
 
