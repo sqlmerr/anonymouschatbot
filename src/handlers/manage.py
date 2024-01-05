@@ -27,7 +27,7 @@ async def manage_cmd(message: Message, dialog_manager: DialogManager, user: User
         await message.answer("<b><i>You aren't owner of this room!</i></b>")
         return
 
-    await dialog_manager.start(ManageDialog.greeting, data={"user_id": user.user_id})
+    await dialog_manager.start(ManageDialog.greeting, data={"user_id": user.user_id, "room_id": room.id}, mode=StartMode.RESET_STACK)
 
 
 @router.errors(ExceptionTypeFilter(UnknownState))
